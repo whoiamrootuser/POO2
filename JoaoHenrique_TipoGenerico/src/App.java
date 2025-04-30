@@ -31,39 +31,36 @@ public class App {
             vetorPessoas.setVet(pessoa);
         }
 
-   
-        
         while (true) {
-                System.out.println("Digite o nome da pessoa que deseja encontrar: ");
-                String nomePessoa = System.console().readLine();
-
-                for (int i = 0; i < tamanhoPessoas; i++) {
-                    Pessoa pessoaAtual = vetorPessoas.getVet().get(i);
-                    if (pessoaAtual.getNome().equalsIgnoreCase(nomePessoa)) {
-                        for (int j = 0; j < tamanhoCidades; j++) {
-                            Cidade cidadeAtual = vetorCidades.getVet().get(j);
-                            if (pessoaAtual.getNaturalidade().equalsIgnoreCase(cidadeAtual.getNome())) {
-                                String[] adjetivos = cidadeAtual.getAdjetivo();
-                                String adjetivoAtual = adjetivos[0];
-                                if (adjetivos.length > 1 && pessoaAtual.getSexo().equalsIgnoreCase("F")) {
-                                    adjetivoAtual = adjetivos[1];
-                                }
-                                System.out.println(
-                                        "A " + adjetivoAtual + " " + pessoaAtual.getNome() + " nasceu em "
-                                                + cidadeAtual.getNome() + " - " + cidadeAtual.getEstado() + ".");
-                                continue;
+            System.out.println("Digite o nome da pessoa que deseja encontrar: ");
+            String nomePessoa = System.console().readLine();
+            boolean pessoaEncontrada = false;
+            for (int i = 0; i < tamanhoPessoas; i++) {
+                Pessoa pessoaAtual = vetorPessoas.getVet().get(i);
+                if (pessoaAtual.getNome().equalsIgnoreCase(nomePessoa)) {
+                    pessoaEncontrada = true;
+                    for (int j = 0; j < tamanhoCidades; j++) {
+                        Cidade cidadeAtual = vetorCidades.getVet().get(j);
+                        if (pessoaAtual.getNaturalidade().equalsIgnoreCase(cidadeAtual.getNome())) {
+                            String[] adjetivos = cidadeAtual.getAdjetivo();
+                            String adjetivoAtual = adjetivos[0];
+                            if (adjetivos.length > 1 && pessoaAtual.getSexo().equalsIgnoreCase("F")) {
+                                adjetivoAtual = adjetivos[1];
                             }
-                            if (pessoaAtual.getNaturalidade().equalsIgnoreCase(null)) {
-                                System.out.println(pessoaAtual.getNome() + " nasceu em cidade desconhecida.");
-                                continue;
-                            }
-
-                            System.out.println(pessoaAtual.getNome() + " nasceu em " + pessoaAtual.getNaturalidade() + ".");
+                            System.out.println(
+                                    "A " + adjetivoAtual + " " + pessoaAtual.getNome() + " nasceu em "
+                                            + cidadeAtual.getNome() + " - " + cidadeAtual.getEstado() + ".");
                             continue;
                         }
+
+                        System.out.println(pessoaAtual.getNome() + " nasceu em " + pessoaAtual.getNaturalidade() + ".");
+                        continue;
                     }
                 }
-
+            }
+            if (!pessoaEncontrada) {
+                System.out.println(nomePessoa + " nasceu em cidade desconhecida.");
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class Gerente extends Funcionario {
 
     @Override
     public String mostrarDados() {
-        return super.mostrarDados() + "\n" + "Salario total: " + Util.formatarMoeda(this.calcularSalario());
+        return "Gerente: \n" + super.mostrarDados() + "\n" + "Salario total: " + Util.formatarMoeda(this.calcularSalario());
     }
 
     private double validaBonus(double bonus) throws SalarioInvalidoException {

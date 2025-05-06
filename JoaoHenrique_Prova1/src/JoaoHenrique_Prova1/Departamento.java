@@ -22,7 +22,6 @@ public class Departamento {
         sb.append("Departamento: " + nome).append("\n");
         for (Funcionario funcionario : funcionarios) {
             sb.append("--------------------------------------------------").append("\n");
-            sb.append("Funcionario").append("\n");
             sb.append(funcionario.mostrarDados()).append("\n");
         }
         return sb.toString();

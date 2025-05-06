@@ -1,4 +1,4 @@
-package JoaoHenrique_Prova1;
+package JoaoHenrique_ExercicioTreinoProva1;
 
 import java.util.ArrayList;
 import java.util.List;

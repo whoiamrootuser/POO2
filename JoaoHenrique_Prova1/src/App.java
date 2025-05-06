@@ -1,7 +1,7 @@
-import JoaoHenrique_Prova1.Departamento;
-import JoaoHenrique_Prova1.Funcionario;
-import JoaoHenrique_Prova1.Gerente;
-import JoaoHenrique_Prova1.SalarioInvalidoException;
+import JoaoHenrique_ExercicioTreinoProva1.Departamento;
+import JoaoHenrique_ExercicioTreinoProva1.Funcionario;
+import JoaoHenrique_ExercicioTreinoProva1.Gerente;
+import JoaoHenrique_ExercicioTreinoProva1.SalarioInvalidoException;
 
 public class App {
     public static void main(String[] args) throws Exception {

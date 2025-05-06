@@ -1,4 +1,4 @@
-package JoaoHenrique_Prova1;
+package JoaoHenrique_ExercicioTreinoProva1;
 
 public class Gerente extends Funcionario {
     private double bonus;

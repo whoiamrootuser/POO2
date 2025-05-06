@@ -1,4 +1,4 @@
-package JoaoHenrique_Prova1;
+package JoaoHenrique_ExercicioTreinoProva1;
 
 public class Util {
     public static String formatarMoeda(double valor) {
